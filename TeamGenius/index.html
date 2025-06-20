@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TeamGenius - A website design and programming team that provides professional services and distinguished work">
+    <title>TeamGenius</title>
+    <!-- Main template css file -->
+    <link rel="stylesheet" href="/css/master.css">
+    <!-- Render all elements normally -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <!-- Font awesome library -->
+    <link rel="stylesheet" href="/css/all.min.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Aos animation library css -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body> 
+    <!-- Start header -->
+    <div class="header">
+        <div class="container">
+            <a href="#landing"><img src="/image/logo.png" alt="TeamGenius logo" class="logo" loading="lazy"></a>
+            <div class="links">
+                <button class="dark-toggle" onclick="toggleDarkMode()" id="darkToggleBtn"><i class="fas fa-sun"></i></button>
+                <div class="nav">
+                    <span class="icons">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End header -->
+    <!-- Start landing section-->
+    <div class="landing" id="landing" data-aos="fade-up">
+        <div class="container">
+            <div class="landing-content">
+                <div class="intro-text" data-aos="fade-right">
+                    <h1>👋 Welcome !</h1>
+                    <p>We are TeamGenius – a creative and passionate team specializing in building and developing modern,
+                        high-quality websites. We turn ideas into powerful digital experiences,
+                        blending design and technology to create impactful online presence for brands and businesses.</p>
+                </div>
+                <div class="image" data-aos="fade-left">
+                    <img src="/image/landing.png" alt="Illustration representing creative web development by TeamGenius" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End landing section-->
+    <!-- Start features -->
+    <div class="features" data-aos="fade-up">
+        <div class="container grid-3">
+            <div class="feat" data-aos="zoom-in">
+                <i class="fas fa-lightbulb fa-3x"></i>
+                <h3>Share Your Vision</h3>
+                <p>Tell us what you dream of — we listen, understand your needs,
+                    and turn your ideas into digital reality with creativity and precision.</p>
+            </div>
+            <div class="feat" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-code fa-3x"></i>
+                <h3>We Handle the Code & Design</h3>
+                <p>From wireframes to the final launch, we take care of every technical and visual detail to ensure your website is fast,
+                    secure, and beautiful.</p>
+            </div>
+            <div class="feat" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-globe-asia fa-3x"></i>
+                <h3>Launch Your Impact Globally</h3>
+                <p>Your site won’t just go live — it’ll go global.
+                    We optimize for all devices and users to help your brand shine on the world stage.</p>
+            </div>
+        </div>
+    </div>
+    <!-- End features -->
+    <!-- Start services -->
+    <div class="services" id="services" data-aos="fade-up">
+        <div class="container">
+            <h2 class="special-heading" data-aos="fade-right">Services</h2>
+            <p data-aos="fade-left">Don’t just be present — make an impact.</p>
+            <div class="services-content grid-3">
+                <div class="col" data-aos="fade-right">
+                    <div class="image image-column">
+                        <img src="/image/services2.png" alt="TeamGenius team providing design and development services" loading="lazy">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="srv" data-aos="flip-left">
+                        <i class="fas fa-palette fa-2x"></i>
+                        <div class="text">
+                            <h3>Graphic Design</h3>
+                            <p>We craft stunning visuals and brand identities that leave a lasting impression and communicate your message clearly.</p>
+                        </div>
+                    </div>
+                    <div class="srv" data-aos="flip-left" data-aos-delay="100">
+                        <i class="fas fa-object-group fa-2x"></i>
+                        <div class="text">
+                            <h3>UI/UX Design</h3>
+                            <p>User-focused interfaces that are beautiful, intuitive, and built to convert — we blend aesthetics with usability.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="srv" data-aos="flip-left" data-aos-delay="200">
+                        <i class="fas fa-desktop fa-2x"></i>
+                        <div class="text">
+                            <h3>Web Design</h3>
+                            <p>Modern, responsive, and custom-tailored designs that reflect your brand and engage your visitors.</p>
+                        </div>
+                    </div>
+                    <div class="srv" data-aos="flip-left" data-aos-delay="300">
+                        <i class="fas fa-code fa-2x"></i>
+                        <div class="text">
+                            <h3>Web Development</h3>
+                            <p>Clean, scalable, and secure code that brings your website to life — optimized for performance and functionality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End services -->
+    <!-- Start portfolio  -->
+    <div class="portfolio" id="portfolio" data-aos="fade-up">
+        <div class="container">
+            <h2 class="special-heading">Portfolio</h2>
+            <p data-aos="fade-left">Your website isn’t just a project — it’s your digital legacy. Let’s make it count.</p>
+            <div class="portfolio-content grid-3">
+                <div class="card" data-aos="zoom-in">
+                    <img src="/image/LapGenius.jpg" alt="LapGenius e-commerce platform interface for laptops" loading="lazy">
+                    <div class="info">
+                        <h3>LapGenius</h3>
+                        <p>LapGenius is a smart e-commerce platform built for the Syrian market, focused on laptop sales.
+                            It features an AI-powered assistant that recommends devices based on users’ field of study and budget,
+                            as well as a tool that estimates fair market prices using local data.</p>
+                    </div>
+                </div>
+                <div class="card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="/image/Tabibona.jpg" alt="Tabibona medical consultation platform screenshot" loading="lazy">
+                    <div class="info">
+                        <h3>Tabibona</h3>
+                        <p>Tabibona is a Remote Humanitarian Medical Platform We developed a platform that connects
+                            underserved patients with volunteer doctors to provide remote medical consultations at symbolic costs.
+                            The project aims to make healthcare more accessible for those unable to visit clinics.</p>
+                    </div>
+                </div>
+                <div class="card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="/image/JobGate_Syria.jpg" alt="JobGate Syria job platform interface" loading="lazy">
+                    <div class="info">
+                        <h3>Jobgate Syria</h3>
+                        <p>Jobgate Syria is a job-matching platform tailored for professionals and employers within Syria. 
+                            Users can input their skills and explore relevant opportunities,
+                            making the job search easier, smarter, and more localized.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End portfolio -->
+    <!-- Start about -->
+    <div class="about" id="about" data-aos="fade-up">
+        <div class="container">
+            <h2 class="special-heading">About</h2>
+            <p data-aos="fade-left">We blend creativity with clean code to build digital experiences that matter.</p>
+            <div class="about-content">
+                <div class="image" data-aos="fade-right">
+                    <img src="/image/about1.png" alt="TeamGenius developers working together" loading="lazy">
+                </div>
+                <div class="text" data-aos="fade-left">
+                    <p>TeamGenius is a team of young,
+                        passionate Syrian designers and developers who believe in the power of simplicity, practicality, and creative thinking.
+                        Our mission is to create websites that are not only beautiful but also intelligent—designed for performance and scalability.</p>
+                    <hr>
+                    <p>We work closely with our clients to understand their goals, then use our expertise in UI/UX, web design,
+                        and development to bring those goals to life.
+                        Whether it's a personal portfolio or a full-scale business platform, we build with precision and purpose.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End about -->
+    <!-- Start contact -->
+    <div class="contact" id="contact" data-aos="fade-up">
+        <div class="container">
+            <h2 class="special-heading">Contact</h2>
+            <p data-aos="fade-left">Let’s build something amazing together — we’d love to hear from you.</p>
+            <div class="contact-content">
+                <div class="info" data-aos="fade-up">
+                    <p class="label">Have a question or a project in mind? Reach out to us at:</p>
+                    <form action="https://formspree.io/f/mldnrola" method="POST" class="contact-form" data-aos="fade-up">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" required placeholder="Your name" />
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required placeholder="Your email" />
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="6" required placeholder="Your message"></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                    <div class="social" data-aos="fade-up">
+                        <p>Follow us and stay connected:</p>
+                        <a href="https://www.facebook.com/share/18wP3ZN7wK/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/mohanad.a.hasan?igsh=YzZuc3FyNnNvZWdh" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.me/mohannad_hasan" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://wa.me/963998735242" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://github.com/mohanad-hasan " target="_blank" class="github-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End contact -->
+    <!-- Start footer -->
+    <div class="footer">&copy; 2025 <span>TeamGenius</span> All rights reserved, Built with ❤️ by creative minds.</div>
+    <!-- End footer -->
+    <!-- Start scrool to top button -->
+    <div class="scrollbtn">
+        <button class="scrollToTopBtn" title="Back to Top" data-aos="zoom-in">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+    <!-- End scroll to top button -->
+    <!-- Start aos -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- End aos -->
+    <!-- Main template js file -->
+    <script src="/js/main.js"></script>
+</body>
+</html> 
