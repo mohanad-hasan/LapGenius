@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سجل دخولك أو أنشئ حساباً جديداً في LapGenius للوصول إلى أفضل عروض اللابتوبات في سوريا. تسوق الآن بأفضل الأسعار!">
+    <title>تسجيل الدخول / إنشاء حساب - LapGenius</title>
+
+    <!-- Master template css file -->
+    <link rel="stylesheet" href="/css/master.css">
+    <!-- Render all elements normally -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <!-- Font awesome library -->
+    <link rel="stylesheet" href="/css/all.min.css">
+    <!-- Google font: cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Start header -->
+    <div class="header">
+        <div class="container">
+            <img src="/image/logo.png" alt="شعار موقع LapGenius - متجر إلكتروني متخصص ببيع اللابتوبات في سوريا " class="logo" loading="lazy">
+        </div>
+    </div>
+    <!-- End header -->
+    <!-- Start login -->
+    <div class="login visible-section section-transition" >
+        <div class="container">
+            <div class="content-login grid-3">
+                <div class="secondary-login">
+                    <h1>أهلاً في LapGenius</h1>
+                    <p>لا تملك حساب ؟</p>
+                    <button id="show-register" aria-label="إنشاء حساب جديد">أنشئ حسابك</button>
+                </div>
+                <div class="primary-login">
+                    <h3 class="label">تسجيل دخول</h3>
+                    <form action="" method="post" class="login-form">
+                        <label for="email-login">البريد الإلكتروني</label>
+                        <div class="input-container">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" name="email-login" id="email-login" autocomplete="email" aria-describedby="email-login-error">
+                        </div>
+                        <div id="email-login-error" class="error-message" aria-live="polite"></div>
+                        <label for="password-login">كلمة المرور</label>
+                        <div class="input-container">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" name="password-login" id="password-login" autocomplete="current-password" aria-describedby="password-login-error">
+                        </div>
+                        <div id="password-login-error" class="error-message" aria-live="polite"></div>
+                        <a href="#" class="forget-pass">نسيت كلمة المرور ؟</a>
+                        <button type="submit" class="login-btn">تسجيل الدخول</button>
+                        <div id="login-success" class="success-message" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End login -->
+    <!-- Start register -->
+    <div class="register hidden-section section-transition">
+        <div class="container">
+            <div class="content-register grid-3">
+                <div class="primary-register">
+                    <h3 class="label">أنشئ حساباً</h3>
+                    <form action="" method="post" class="register-form" >
+                        <label for="name-register">اسم المستخدم</label>
+                        <div class="input-container">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" name="name-register" id="name-register" autocomplete="username" aria-describedby="name-register-error">
+                        </div>
+                        <div id="name-register-error" class="error-message" aria-live="polite"></div>
+                        <label for="email-register">البريد الإلكتروني</label>
+                        <div class="input-container">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" name="email-register" id="email-register" autocomplete="email" aria-describedby="email-register-error">
+                        </div>
+                        <div id="email-register-error" class="error-message" aria-live="polite"></div>
+                        <label for="password-register">كلمة المرور</label>
+                        <div class="input-container">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" name="password-register" id="password-register" autocomplete="new-password" aria-describedby="password-register-error">
+                        </div>
+                        <div id="password-register-error" class="error-message" aria-live="polite"></div>
+                        <label for="re-password">أعد كتابة كلمة المرور</label>
+                        <div class="input-container">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" name="re-password" id="re-password" aria-describedby="re-password-error">
+                        </div>
+                        <div id="re-password-error" class="error-message" aria-live="polite"></div>
+                        <button type="submit" class="register-btn">أنشئ حسابك</button>
+                        <div id="register-success" class="success-message" aria-live="polite"></div>
+                    </form>
+                </div>
+                <div class="secondary-register">
+                    <h1>أهلاً في LapGenius</h1>
+                    <p>لديك حساب سابق ؟</p>
+                    <button id="show-login" aria-label="تسجيل الدخول">سجل دخولك</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End register -->
+    <!-- Main template js file -->
+    <script src="/js/main.js"></script>
+</body>
+</html>

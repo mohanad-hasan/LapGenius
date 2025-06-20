@@ -1,0 +1,478 @@
+/* Start global rules */
+:root {
+    --main-color : #03A9F4;
+    --secondary-color: #01579B;
+    --section-color: #f6f6f6;
+    --para-color: #777;
+    --bg-color: #ffffff;
+    --shadow-color: #B3E5FC;
+    --main-duration: 0.3s;
+    --text-color: #000000;
+    --space-margin-top: 25px;
+    --line-paragraph: 1.8;
+    --error-color: #f44336;
+    --success-color: #4caf50;
+    --skeleton-color: #e0e0e0;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html[lang="ar"] {
+    direction: rtl;
+}
+body {
+    font-family: "cairo" , sans-serif;
+    position: relative;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px){
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width:1170px;
+    }
+}
+/* End global rules */
+
+/* Start creat frame work */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+    gap: 0px;
+}
+.hidden-section {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.visible-section {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+/* End creat frame work */
+
+/* Start header */
+.header {
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 20px 0px;
+}
+.header .container {
+    text-align: center;
+}
+.header .logo {
+    width: 100px;
+    height: auto;
+} 
+/* End header */
+
+/* Start login */
+.login .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login .content-login {
+    background-color: var(--section-color);
+    width: 850px;
+    height: 600px;
+    box-shadow: 0px 5px 40px var(--shadow-color);
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    overflow: hidden;
+}
+@media (max-width: 768px){
+    .login .content-login{
+        height: fit-content;   
+    }
+}
+@media (max-width:344px){
+    .login .content-login {
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -o-transform: scale(0.9);
+}
+}
+@media (min-width: 1024px){
+    .login .content-login {
+        margin-bottom: 15px;
+    }
+}
+.login .content-login .secondary-login {
+    padding: 20px 10px;
+    background-color: var(--main-color);
+    border-top-left-radius: 35%;
+    border-bottom-left-radius: 35%;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: var(--bg-color);
+    perspective: 800px;
+}
+@media (max-width: 738px){
+    .login .content-login .secondary-login{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 35%;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 35%;
+    }
+}
+.login .content-login .secondary-login h1{
+    margin: 0;
+}
+.login .content-login .secondary-login p{
+    font-size: 20px;
+    margin: 0px;
+}
+.login .content-login .secondary-login button {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    padding: 6px 12px;
+    border: 1px solid var(--section-color);
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--main-duration);
+    -webkit-transition: var(--main-duration);
+    -moz-transition: var(--main-duration);
+    -ms-transition: var(--main-duration);
+    -o-transition: var(--main-duration);
+}
+.login .content-login .secondary-login button:hover {
+    background-color: var(--secondary-color);
+    transform: translateZ(30px);
+    -webkit-transform: translateZ(30px);
+    -moz-transform: translateZ(30px);
+    -ms-transform: translateZ(30px);
+    -o-transform: translateZ(30px);
+}
+.login .content-login .primary-login .label{
+    text-align: center;
+    color: var(--para-color);
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 20px;
+}
+.login .content-login .primary-login .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 75px auto auto auto;
+    perspective: 800px;
+    padding: 40px;
+}
+@media (max-width: 768px){
+    .login .content-login .primary-login .login-form {
+        margin: 0;
+    }
+}
+.login .content-login .primary-login .login-form label {
+    color: var(--para-color);
+    font-size: 20px;
+}
+.login .content-login .primary-login .login-form .input-container {
+    position: relative;
+    margin-bottom: 15px;
+}
+.login .content-login .primary-login .login-form .input-container i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #888;
+}
+.login .content-login .primary-login .login-form .input-container input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    background-color: #fdfdfd;
+    transition: border var(--transition-duration);
+    -webkit-transition: border var(--transition-duration);
+    -moz-transition: border var(--transition-duration);
+    -ms-transition: border var(--transition-duration);
+    -o-transition: border var(--transition-duration);
+}
+.login .content-login .primary-login .login-form .input-container input:focus {
+    border-color: var(--main-color);
+    outline: none;
+}
+.login .content-login .primary-login .login-form .forget-pass {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 20px;
+    margin-top: 20px;
+}
+.login .content-login .primary-login .login-form .forget-pass:hover {
+    color: var(--error-color);
+}
+.login .content-login .primary-login .login-form button {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--main-duration);
+    -webkit-transition: var(--main-duration);
+    -moz-transition: var(--main-duration);
+    -ms-transition: var(--main-duration);
+    -o-transition: var(--main-duration);
+}
+
+.login .content-login .primary-login .login-form button:hover {
+    background-color: var(--secondary-color);
+    transform: translateZ(30px);
+    -webkit-transform: translateZ(30px);
+    -moz-transform: translateZ(30px);
+    -ms-transform: translateZ(30px);
+    -o-transform: translateZ(30px);
+}
+/* End login */
+
+/* Start register */
+.register .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register .content-register {
+    background-color: var(--section-color);
+    width: 850px;
+    height: auto;
+    box-shadow: 0px 5px 40px var(--shadow-color);
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    overflow: hidden;
+}
+@media (max-width: 768px){
+    .register .content-register{
+        height: fit-content;   
+        margin-bottom: 15px;
+    }
+}
+@media (max-width:344px){
+    .register .content-register {
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -o-transform: scale(0.9);
+    }
+}
+@media (min-width: 1024px){
+    .register .content-register {
+        margin-bottom: 15px;
+    }
+}
+.register .content-register .secondary-register {
+    padding: 20px 10px;
+    background-color: var(--main-color);
+    border-top-right-radius: 35%;
+    border-bottom-right-radius: 35%;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: var(--bg-color);
+    perspective: 800px;
+}
+@media (max-width: 738px){
+    .register .content-register .secondary-register{
+    border-top-left-radius: 35%;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 35%;
+    border-bottom-right-radius: 30px;
+    }
+}
+.register .content-register .secondary-register h1{
+    margin: 0;
+}
+.register .content-register .secondary-register p{
+    font-size: 20px;
+    margin: 0px;
+}
+.register .content-register .secondary-register button {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    padding: 6px 12px;
+    border: 1px solid var(--section-color);
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--main-duration);
+    -webkit-transition: var(--main-duration);
+    -moz-transition: var(--main-duration);
+    -ms-transition: var(--main-duration);
+    -o-transition: var(--main-duration);
+}
+.register .content-register .secondary-register button:hover {
+    background-color: var(--secondary-color);
+    transform: translateZ(30px);
+    -webkit-transform: translateZ(30px);
+    -moz-transform: translateZ(30px);
+    -ms-transform: translateZ(30px);
+    -o-transform: translateZ(30px);
+}
+.register .content-register .primary-register .label{
+    text-align: center;
+    color: var(--para-color);
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 20px;
+}
+.register .content-register .primary-register .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto;
+    perspective: 800px;
+    padding: 40px;
+}
+.register .content-register .primary-register .register-form label {
+    color: var(--para-color);
+    font-size: 20px;
+}
+.register .content-register .primary-register .register-form .input-container {
+    position: relative;
+    margin-bottom: 15px;
+}
+.register .content-register .primary-register .register-form .input-container i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #888;
+}
+.register .content-register .primary-register .register-form .input-container input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    background-color: #fdfdfd;
+    transition: border var(--transition-duration);
+    -webkit-transition: border var(--transition-duration);
+    -moz-transition: border var(--transition-duration);
+    -ms-transition: border var(--transition-duration);
+    -o-transition: border var(--transition-duration);
+}
+.register .content-register .primary-register .register-form .input-container input:focus {
+    border-color: var(--main-color);
+    outline: none;
+}
+.register .content-register .primary-register .register-form a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 20px;
+}
+.register .content-register .primary-register .register-form button {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--main-duration);
+    -webkit-transition: var(--main-duration);
+    -moz-transition: var(--main-duration);
+    -ms-transition: var(--main-duration);
+    -o-transition: var(--main-duration);
+}
+.register .content-register .primary-register .register-form button:hover {
+    background-color: var(--secondary-color);
+    transform: translateZ(30px);
+    -webkit-transform: translateZ(30px);
+    -moz-transform: translateZ(30px);
+    -ms-transform: translateZ(30px);
+    -o-transform: translateZ(30px);
+}
+/* End register */
+
+/* Start the login and register on top of each other */
+.login,
+.register {
+    position: absolute;
+    top: 123px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1;
+}
+/* End the login and register on top of each other */
+
+/* Start validation messages */
+.error-message {
+    color: var(--error-color);
+    font-size: 14px;
+    margin: -10px 0 10px;
+    text-align: right;
+    display: none;
+}
+
+.success-message {
+    color: var(--success-color);
+    font-size: 16px;
+    text-align: center;
+    margin: 15px 0 0;
+    display: none;
+}
+
+.input-error {
+    border-color: var(--error-color) !important;
+}
+
+.input-success {
+    border-color: var(--success-color) !important;
+}
+/* End validation messages */
