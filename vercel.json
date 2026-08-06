@@ -1,5 +1,11 @@
 {
   "buildCommand": "npm run build",
   "framework": "vite",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/ai-api/:path*",
+      "destination": "https://lapgeniusai-production.up.railway.app/:path*"
+    }
+  ]
 }
