@@ -1,0 +1,214 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Cairo", system-ui, -apple-system, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-section: var(--section);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 1rem;
+  /* Brand */
+  --background: oklch(0.99 0.005 240);
+  --foreground: oklch(0.17 0.03 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.17 0.03 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.17 0.03 250);
+  --primary: oklch(0.7 0.16 235);              /* #03A9F4 */
+  --primary-foreground: oklch(1 0 0);
+  --primary-dark: oklch(0.42 0.16 250);        /* #01579B */
+  --secondary: oklch(0.96 0.01 240);
+  --secondary-foreground: oklch(0.17 0.03 250);
+  --muted: oklch(0.96 0.005 240);
+  --muted-foreground: oklch(0.48 0.025 250);
+  --accent: oklch(0.94 0.04 235);
+  --accent-foreground: oklch(0.42 0.16 250);
+  --destructive: oklch(0.63 0.22 28);
+  --destructive-foreground: oklch(1 0 0);
+  --success: oklch(0.72 0.17 145);
+  --success-foreground: oklch(1 0 0);
+  --border: oklch(0.92 0.012 240);
+  --input: oklch(0.94 0.01 240);
+  --ring: oklch(0.78 0.10 230);
+  --section: oklch(0.975 0.006 240);
+
+  --gradient-hero: linear-gradient(135deg, oklch(0.38 0.16 252) 0%, oklch(0.55 0.18 240) 45%, oklch(0.72 0.16 230) 100%);
+  --gradient-card: linear-gradient(135deg, oklch(0.72 0.16 230 / 0.10), oklch(0.42 0.16 250 / 0.05));
+  --gradient-mesh: radial-gradient(circle at 20% 20%, oklch(0.72 0.16 230 / 0.18), transparent 50%),
+                   radial-gradient(circle at 80% 80%, oklch(0.42 0.16 250 / 0.16), transparent 55%);
+  --gradient-soft: linear-gradient(180deg, oklch(0.97 0.015 235) 0%, oklch(0.99 0.005 240) 100%);
+  --shadow-glass: 0 8px 32px 0 oklch(0.42 0.16 250 / 0.10);
+  --shadow-soft: 0 4px 18px -6px oklch(0.42 0.16 250 / 0.10);
+  --shadow-elev: 0 20px 50px -22px oklch(0.42 0.16 250 / 0.28);
+
+  --sidebar: oklch(0.985 0.006 240);
+  --sidebar-foreground: oklch(0.17 0.03 250);
+  --sidebar-primary: oklch(0.7 0.16 235);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.94 0.04 235);
+  --sidebar-accent-foreground: oklch(0.42 0.16 250);
+  --sidebar-border: oklch(0.92 0.012 240);
+  --sidebar-ring: oklch(0.78 0.10 230);
+}
+
+.dark {
+  --background: oklch(0.15 0.025 250);
+  --foreground: oklch(0.97 0.005 240);
+  --card: oklch(0.21 0.03 250);
+  --card-foreground: oklch(0.97 0.005 240);
+  --popover: oklch(0.21 0.03 250);
+  --popover-foreground: oklch(0.97 0.005 240);
+  --primary: oklch(0.76 0.16 230);
+  --primary-foreground: oklch(0.12 0.02 250);
+  --primary-dark: oklch(0.58 0.17 245);
+  --secondary: oklch(0.27 0.03 250);
+  --secondary-foreground: oklch(0.97 0.005 240);
+  --muted: oklch(0.26 0.03 250);
+  --muted-foreground: oklch(0.78 0.02 240);
+  --accent: oklch(0.32 0.07 240);
+  --accent-foreground: oklch(0.97 0.01 230);
+  --destructive: oklch(0.7 0.21 28);
+  --destructive-foreground: oklch(0.98 0.003 240);
+  --success: oklch(0.78 0.16 145);
+  --success-foreground: oklch(0.12 0.02 250);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.6 0.13 235);
+  --section: oklch(0.18 0.025 250);
+
+  --gradient-hero: linear-gradient(135deg, oklch(0.16 0.05 252) 0%, oklch(0.28 0.12 245) 50%, oklch(0.42 0.16 235) 100%);
+  --gradient-card: linear-gradient(135deg, oklch(0.76 0.16 230 / 0.14), oklch(0.58 0.17 245 / 0.06));
+  --gradient-mesh: radial-gradient(circle at 20% 20%, oklch(0.5 0.18 240 / 0.22), transparent 50%),
+                   radial-gradient(circle at 80% 80%, oklch(0.35 0.14 255 / 0.22), transparent 55%);
+  --gradient-soft: linear-gradient(180deg, oklch(0.17 0.03 250) 0%, oklch(0.15 0.025 250) 100%);
+  --shadow-glass: 0 8px 32px 0 oklch(0 0 0 / 0.45);
+  --shadow-soft: 0 4px 18px -4px oklch(0 0 0 / 0.55);
+  --shadow-elev: 0 20px 50px -20px oklch(0 0 0 / 0.7);
+
+  --sidebar: oklch(0.19 0.025 250);
+  --sidebar-foreground: oklch(0.97 0.005 240);
+  --sidebar-primary: oklch(0.76 0.16 230);
+  --sidebar-primary-foreground: oklch(0.12 0.02 250);
+  --sidebar-accent: oklch(0.3 0.05 245);
+  --sidebar-accent-foreground: oklch(0.97 0.005 240);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.6 0.13 235);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Cairo", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  [dir="rtl"] body { font-family: "Cairo", system-ui, sans-serif; }
+  h1, h2, h3, h4 { letter-spacing: -0.02em; }
+  [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 { letter-spacing: 0; }
+
+
+  /* Native select theming so dark mode dropdown options stay readable */
+  select { color-scheme: light; }
+  .dark select { color-scheme: dark; }
+  select option {
+    background-color: var(--color-popover);
+    color: var(--color-popover-foreground);
+  }
+}
+
+@utility glass {
+  background: color-mix(in oklab, var(--color-card) 70%, transparent);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid color-mix(in oklab, var(--color-border) 60%, transparent);
+}
+@utility glass-strong {
+  background: color-mix(in oklab, var(--color-card) 88%, transparent);
+  backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid color-mix(in oklab, var(--color-border) 80%, transparent);
+}
+@utility gradient-hero {
+  background: var(--gradient-hero);
+}
+@utility gradient-mesh {
+  background: var(--gradient-mesh);
+}
+@utility gradient-soft {
+  background: var(--gradient-soft);
+}
+@utility gradient-text {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility shadow-soft { box-shadow: var(--shadow-soft); }
+@utility shadow-elev { box-shadow: var(--shadow-elev); }
+@utility shadow-glass { box-shadow: var(--shadow-glass); }
+@utility card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover { transform: translateY(-4px); box-shadow: var(--shadow-elev); }
+}
+
+/* Recharts dark-mode readability */
+.recharts-cartesian-axis-tick-value,
+.recharts-legend-item-text,
+.recharts-text {
+  fill: var(--color-muted-foreground) !important;
+}
+.recharts-cartesian-grid line { stroke: var(--color-border) !important; }
+.recharts-default-tooltip {
+  background-color: var(--color-popover) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 0.75rem !important;
+  color: var(--color-popover-foreground) !important;
+  box-shadow: var(--shadow-elev) !important;
+}
+.recharts-tooltip-label, .recharts-tooltip-item { color: var(--color-popover-foreground) !important; }
+
+@utility no-scrollbar {
+  &::-webkit-scrollbar { display: none; }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
