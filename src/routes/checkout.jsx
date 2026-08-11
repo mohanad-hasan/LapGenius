@@ -219,13 +219,13 @@ function CheckoutPage() {
                       {/* Sham Cash Number */}
                       <div>
                         <label className="text-xs font-bold text-muted-foreground block mb-1">
-                          {isAr ? "رقم حساب شام كاش المحول منه" : "Your Sham Cash Account Number"} <span className="text-destructive">*</span>
+                          {isAr ? "رقم حساب شام كاش المحول منه" : "أدخل رقم حساب الشام كاش الخاص بك"} <span className="text-destructive">*</span>
                         </label>
                         <input
                           type="text"
                           value={shamNumber}
                           onChange={(e) => { setShamNumber(e.target.value); setShamNumberErr(""); }}
-                          placeholder={isAr ? "أدخل رقمك الخاص بشام كاش هنا..." : "أدخل رقم حساب الشام كاش الخاص يك هنا"}
+                          placeholder={isAr ? "أدخل رقمك الخاص بشام كاش هنا..." : "Enter your Sham Cash account number here..."}
                           className={`w-full h-11 px-4 rounded-xl border bg-background focus:outline-none focus:ring-2 focus:ring-ring transition font-mono text-sm ${shamNumberErr ? "border-destructive focus:ring-destructive/30" : ""}`}
                         />
                         {shamNumberErr && <span className="block mt-1 text-xs font-semibold text-destructive">{shamNumberErr}</span>}
@@ -234,7 +234,7 @@ function CheckoutPage() {
                       {/* Bank Account Image */}
                       <div>
                         <span className="text-xs font-bold text-muted-foreground block mb-1">
-                          {isAr ? "صورة إثبات ملكية الحساب البنكي (اختياري)" : "أدخل صورة QR الشام كاش الخاص بك"}
+                          {isAr ? "صورة إثبات ملكية الحساب البنكي (اختياري)" : "أدخل صورة QR (اختياري) الشام كاش الخاص بك"}
                         </span>
                         <label className="flex items-center gap-3 p-3 rounded-2xl border border-dashed bg-background/40 cursor-pointer hover:bg-accent/40 transition">
                           <div className="size-10 shrink-0 rounded-xl bg-primary/10 text-primary grid place-items-center">
@@ -253,7 +253,7 @@ function CheckoutPage() {
                       {/* Proof Files (proof_url[]) */}
                       <div>
                         <span className="text-xs font-bold text-muted-foreground block mb-1">
-                          {isAr ? "إيصالات الحوالة المالية" : "Payment Transfer Receipts"} <span className="text-destructive">*</span>
+                          {isAr ? "إيصالات الحوالة المالية" : "أدخل تقرير التوصيل"} <span className="text-destructive">*</span>
                         </span>
 
                         {/* Existing files list */}
