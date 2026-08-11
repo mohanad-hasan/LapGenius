@@ -225,7 +225,7 @@ function CheckoutPage() {
                           type="text"
                           value={shamNumber}
                           onChange={(e) => { setShamNumber(e.target.value); setShamNumberErr(""); }}
-                          placeholder={isAr ? "أدخل رقمك الخاص بشام كاش هنا..." : "Enter your Sham Cash number here..."}
+                          placeholder={isAr ? "أدخل رقمك الخاص بشام كاش هنا..." : "أدخل رقم حساب الشام كاش الخاص يك هنا"}
                           className={`w-full h-11 px-4 rounded-xl border bg-background focus:outline-none focus:ring-2 focus:ring-ring transition font-mono text-sm ${shamNumberErr ? "border-destructive focus:ring-destructive/30" : ""}`}
                         />
                         {shamNumberErr && <span className="block mt-1 text-xs font-semibold text-destructive">{shamNumberErr}</span>}
@@ -234,7 +234,7 @@ function CheckoutPage() {
                       {/* Bank Account Image */}
                       <div>
                         <span className="text-xs font-bold text-muted-foreground block mb-1">
-                          {isAr ? "صورة إثبات ملكية الحساب البنكي (اختياري)" : "Bank Account Ownership Proof (Optional)"}
+                          {isAr ? "صورة إثبات ملكية الحساب البنكي (اختياري)" : "أدخل صورة QR الشام كاش الخاص بك"}
                         </span>
                         <label className="flex items-center gap-3 p-3 rounded-2xl border border-dashed bg-background/40 cursor-pointer hover:bg-accent/40 transition">
                           <div className="size-10 shrink-0 rounded-xl bg-primary/10 text-primary grid place-items-center">
@@ -243,7 +243,7 @@ function CheckoutPage() {
                           <div className="flex-1 min-w-0">
                             {bankImage
                               ? <span className="text-sm font-semibold text-success truncate block">{bankImage.name}</span>
-                              : <span className="text-sm text-muted-foreground">{isAr ? "اضغط هنا لاختيار صورة الحساب..." : "Click here to select account image..."}</span>}
+                              : <span className="text-sm text-muted-foreground">{isAr ? "اضغط هنا لاختيار صورة الحساب..." : "Click here to select sham cash image..."}</span>}
                           </div>
                           <input type="file" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf"
                             onChange={onPickBankImage} className="sr-only" />
