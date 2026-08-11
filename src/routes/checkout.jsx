@@ -234,7 +234,7 @@ function CheckoutPage() {
                       {/* Bank Account Image */}
                       <div>
                         <span className="text-xs font-bold text-muted-foreground block mb-1">
-                          {isAr ? "صورة إثبات ملكية الحساب البنكي (اختياري)" : "أدخل صورة QR (اختياري) الشام كاش الخاص بك"}
+                          {isAr ? "صورة إثبات ملكية الحساب البنكي (اختياري)" : "أدخل صورة QR الشام كاش الخاص بك"}
                         </span>
                         <label className="flex items-center gap-3 p-3 rounded-2xl border border-dashed bg-background/40 cursor-pointer hover:bg-accent/40 transition">
                           <div className="size-10 shrink-0 rounded-xl bg-primary/10 text-primary grid place-items-center">
