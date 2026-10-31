@@ -31,30 +31,16 @@ function normalizeOrder(o) {
 
   // Backend stores payment method as payment_method (not method)
   const paymentMethod =
-    o.payment?.payment_method ||
-    o.payment?.method ||
-    o.payment_method ||
-    "cash_on_delivery";
+    o.payment?.payment_method || o.payment?.method || o.payment_method || "cash_on_delivery";
 
   // Resolve sham cash fields — may live at order root OR nested under payment
-  const shamCashNumber =
-    o.payment?.sham_cash_number ||
-    o.sham_cash_number ||
-    null;
+  const shamCashNumber = o.payment?.sham_cash_number || o.sham_cash_number || null;
 
-  const bankAccountImageRaw =
-    o.payment?.bank_account_image ||
-    o.bank_account_image ||
-    null;
+  const bankAccountImageRaw = o.payment?.bank_account_image || o.bank_account_image || null;
 
   // proof_url can be JSON string "[\"path\"]", array, or single string
   const resolveProofUrls = () => {
-    let raw =
-      o.payment?.proof_url ??
-      o.payment?.proof_urls ??
-      o.proof_url ??
-      o.proof_urls ??
-      [];
+    let raw = o.payment?.proof_url ?? o.payment?.proof_urls ?? o.proof_url ?? o.proof_urls ?? [];
     try {
       if (typeof raw === "string" && raw.trim().startsWith("[")) {
         raw = JSON.parse(raw);
@@ -102,10 +88,7 @@ function normalizeOrder(o) {
     // Legacy single proof (backward compat)
     paymentProof: (() => {
       const legacy =
-        o.payment?.proof_url ||
-        o.proof_url ||
-        o.payment_proof ||
-        o.payment?.payment_proof;
+        o.payment?.proof_url || o.proof_url || o.payment_proof || o.payment?.payment_proof;
       if (legacy) {
         return { name: "proof", url: resolveUrl(Array.isArray(legacy) ? legacy[0] : legacy) };
       }
@@ -251,15 +234,23 @@ export const sellerService = {
   /** قبول الطلب — ينقص من المخزون فقط للـ COD */
   async acceptOrder(id, orderPayload = {}) {
     const result = await api.put(`/seller/orders/${id}/accept`, {});
-    const paymentMethod = orderPayload?.paymentMethod || orderPayload?.payment?.payment_method || orderPayload?.payment_method || "cash_on_delivery";
-    const items = (orderPayload?.orderItems || orderPayload?.items || []).map((item) => ({
-      id: item?.productId || item?.product_id || item?.id,
-      qty: item?.qty || item?.quantity || 1,
-    })).filter((item) => item.id != null);
+    const paymentMethod =
+      orderPayload?.paymentMethod ||
+      orderPayload?.payment?.payment_method ||
+      orderPayload?.payment_method ||
+      "cash_on_delivery";
+    const items = (orderPayload?.orderItems || orderPayload?.items || [])
+      .map((item) => ({
+        id: item?.productId || item?.product_id || item?.id,
+        qty: item?.qty || item?.quantity || 1,
+      }))
+      .filter((item) => item.id != null);
 
     if (items.length > 0) {
       const products = await productService.all();
-      const stockLookup = Object.fromEntries((products || []).map((product) => [String(product.id), Number(product.stock || 0)]));
+      const stockLookup = Object.fromEntries(
+        (products || []).map((product) => [String(product.id), Number(product.stock || 0)]),
+      );
       await applyOrderStockChange({
         orderId: String(id),
         paymentMethod,
@@ -275,15 +266,23 @@ export const sellerService = {
   /** رفض الطلب */
   async rejectOrder(id, reason, orderPayload = {}) {
     const result = await api.put(`/seller/orders/${id}/reject`, { note: reason });
-    const paymentMethod = orderPayload?.paymentMethod || orderPayload?.payment?.payment_method || orderPayload?.payment_method || "cash_on_delivery";
-    const items = (orderPayload?.orderItems || orderPayload?.items || []).map((item) => ({
-      id: item?.productId || item?.product_id || item?.id,
-      qty: item?.qty || item?.quantity || 1,
-    })).filter((item) => item.id != null);
+    const paymentMethod =
+      orderPayload?.paymentMethod ||
+      orderPayload?.payment?.payment_method ||
+      orderPayload?.payment_method ||
+      "cash_on_delivery";
+    const items = (orderPayload?.orderItems || orderPayload?.items || [])
+      .map((item) => ({
+        id: item?.productId || item?.product_id || item?.id,
+        qty: item?.qty || item?.quantity || 1,
+      }))
+      .filter((item) => item.id != null);
 
     if (items.length > 0) {
       const products = await productService.all();
-      const stockLookup = Object.fromEntries((products || []).map((product) => [String(product.id), Number(product.stock || 0)]));
+      const stockLookup = Object.fromEntries(
+        (products || []).map((product) => [String(product.id), Number(product.stock || 0)]),
+      );
       await applyOrderStockChange({
         orderId: String(id),
         paymentMethod,

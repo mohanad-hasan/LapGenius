@@ -5,7 +5,7 @@
   "rewrites": [
     {
       "source": "/ai-api/:path*",
-      "destination": "https://lapgeniusai-production.up.railway.app/:path*"
+      "destination": "https://lapgenius-ai.onrender.com/:path*"
     }
   ]
 }

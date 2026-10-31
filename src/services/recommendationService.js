@@ -5,8 +5,8 @@ const USE_CASE_MAP = {
   Gaming: "gaming",
   Programming: "programming",
   Design: "design",
-  Business: "general",  // "business" causes 500 on the API — fallback to "general"
-  Study: "general",     // "study" causes 500 on the API — fallback to "general"
+  Business: "general", // "business" causes 500 on the API — fallback to "general"
+  Study: "general", // "study" causes 500 on the API — fallback to "general"
 };
 
 export const recommendationService = {

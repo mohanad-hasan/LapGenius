@@ -13,7 +13,7 @@ export default defineConfig({
     server: {
       proxy: {
         "/ai-api": {
-          target: "https://lapgeniusai-production.up.railway.app",
+          target: "https://lapgenius-ai.onrender.com",
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/ai-api/, ""),
         },

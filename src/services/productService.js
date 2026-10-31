@@ -58,7 +58,7 @@ function normalizeProduct(p) {
     discountPercent: parseFloat(p.discount_percent) || 0,
     discountedPrice: parseFloat(p.discounted_price) || parseFloat(p.price) || 0,
     aiPrice: parseFloat(p.ai_estimated_price || p.price) || 0,
-    stock: getProductStockOverride(p.id) ?? (p.stock_quantity ?? p.stock ?? 0),
+    stock: getProductStockOverride(p.id) ?? p.stock_quantity ?? p.stock ?? 0,
     description: p.description || "",
     cpu: p.cpu_type || p.specifications?.cpu || "",
     gpu: p.gpu_type || p.specifications?.gpu || null,

@@ -29,11 +29,25 @@ function normalizeCustomerOrder(o) {
   const items = pick(o, ["items", "order_items", "products", "cart"]) || [];
 
   // total — try common fields, fallback to summing item subtotals or prices
-  let totalRaw = pick(o, ["total_amount", "total_price", "total", "amount", "grand_total", "grandTotal"]);
+  let totalRaw = pick(o, [
+    "total_amount",
+    "total_price",
+    "total",
+    "amount",
+    "grand_total",
+    "grandTotal",
+  ]);
   let total = parseFloat(totalRaw || 0) || 0;
   if ((!total || total === 0) && Array.isArray(items) && items.length > 0) {
     total = items.reduce((sum, it) => {
-      const sub = parseFloat(it.subtotal || it.total || (it.price_at_purchase && (it.price_at_purchase * (it.quantity || it.qty || 1))) || it.price || 0) || 0;
+      const sub =
+        parseFloat(
+          it.subtotal ||
+            it.total ||
+            (it.price_at_purchase && it.price_at_purchase * (it.quantity || it.qty || 1)) ||
+            it.price ||
+            0,
+        ) || 0;
       return sum + sub;
     }, 0);
   }
@@ -70,7 +84,12 @@ function normalizeCustomerOrder(o) {
     return base ? `${base}/${path}` : `/${path}`;
   };
 
-  const pickPayment = (keys) => pick(payment, keys) ?? pick(o, keys.map(k => k.replace(/payment_?/, '')));
+  const pickPayment = (keys) =>
+    pick(payment, keys) ??
+    pick(
+      o,
+      keys.map((k) => k.replace(/payment_?/, "")),
+    );
 
   const bankRaw = pick(payment, ["bank_account_image"]) || o.bank_account_image || null;
   const bank_account_image = bankRaw ? resolveUrl(bankRaw) : null;
@@ -92,7 +111,7 @@ function normalizeCustomerOrder(o) {
       if (Array.isArray(parsed)) proofList = parsed;
       else proofList = [parsed];
     } catch (e) {
-      const idx = rawProofs.indexOf('[');
+      const idx = rawProofs.indexOf("[");
       if (idx !== -1) {
         try {
           const parsed = JSON.parse(rawProofs.slice(idx));
@@ -114,8 +133,10 @@ function normalizeCustomerOrder(o) {
   const proof_urls = proofList.map(resolveUrl).filter(Boolean);
 
   const paymentObj = { ...payment };
-  if (!paymentObj.bank_account_image && bank_account_image) paymentObj.bank_account_image = bank_account_image;
-  if (!paymentObj.sham_cash_number && sham_cash_number) paymentObj.sham_cash_number = sham_cash_number;
+  if (!paymentObj.bank_account_image && bank_account_image)
+    paymentObj.bank_account_image = bank_account_image;
+  if (!paymentObj.sham_cash_number && sham_cash_number)
+    paymentObj.sham_cash_number = sham_cash_number;
   if (!paymentObj.proof_url && proof_urls.length) paymentObj.proof_url = proof_urls;
   if (!paymentObj.payment_proof && proof_urls.length) paymentObj.payment_proof = proof_urls[0];
 
@@ -134,7 +155,9 @@ function normalizeCustomerOrder(o) {
     phone: o.phone || o.customer?.phone || o.user?.phone || null,
     // طريقة الدفع — من payment object أو من الجذر
     payment_method:
-      (o.payment && (o.payment.payment_method || o.payment.method)) || o.payment_method || "cash_on_delivery",
+      (o.payment && (o.payment.payment_method || o.payment.method)) ||
+      o.payment_method ||
+      "cash_on_delivery",
     // كائن الدفع الكامل (للتفاصيل مثل sham_cash_number)
     payment: paymentObj,
     // bank image and sham cash at root for older consumers
@@ -184,7 +207,9 @@ export const orderService = {
 
     if (orderId && typeof onStockUpdate === "function") {
       const products = await productService.all();
-      const stockLookup = Object.fromEntries((products || []).map((product) => [String(product.id), Number(product.stock || 0)]));
+      const stockLookup = Object.fromEntries(
+        (products || []).map((product) => [String(product.id), Number(product.stock || 0)]),
+      );
       const stockResult = await applyOrderStockChange({
         orderId,
         paymentMethod: "cash_on_delivery",
@@ -258,7 +283,9 @@ export const orderService = {
 
     if (typeof onStockUpdate === "function") {
       const products = await productService.all();
-      const stockLookup = Object.fromEntries((products || []).map((product) => [String(product.id), Number(product.stock || 0)]));
+      const stockLookup = Object.fromEntries(
+        (products || []).map((product) => [String(product.id), Number(product.stock || 0)]),
+      );
       const stockResult = await applyOrderStockChange({
         orderId,
         paymentMethod: "sham_cash",
